@@ -1,6 +1,332 @@
-{% extends "layout.html" %}
-{% block body %}
-<div class="">
-    <p>Content in the main body of the webpage goes here.</p>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rob Fletcher - Scientist, Tinkerer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/devicon-master/devicon.min.css') }}" rel="stylesheet">
+    <link href="{{url_for('static', filename='vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static', filename='css/resume.css') }}" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Rob Fletcher</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/static/img/Beard.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Rob
+            <span class="text-primary">Fletcher</span>
+          </h1>
+          <div class="subheading mb-5">Philadelphia, PA 19127 · (951) 858-2459 ·
+            <a href="mailto:robroy.fletcher@gmail.com">robroy.fletcher@gmail.com</a>
+          </div>
+          <p class="mb-5">I am a scientist, a tinkerer, and a builder. I want to use data and machine learing to solve interesting problems.</p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://plus.google.com/u/0/105658979442123723057">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://stackoverflow.com/users/4586851/robmotron">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/rob-roy-fletcher/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/Rob-Fletcher">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Experience</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Research Assistant - ATLAS Experiment</h3>
+              <div class="subheading mb-3">University of Pennsylvania</div>
+              <p>Using some of the largest data sets in the world, I worked with teams of physicists in the search for new, lighter versions of the Higgs Boson.
+                 In the ATLAS datasets, signals are burried under large backgrounds so it is essential to model and understand these backgrounds well. I have
+                 worked on a new method for background modeling using Gaussian Process Regression to make a prediction on noisey data.</p>
+                 <a href="/atlas">More about my work on ATLAS.</a>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">July 2012 - Present</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Research Assistant - MICE Experiment</h3>
+              <div class="subheading mb-3">University of California, Riverside</div>
+              <p>As an undergraduate I worked on the Muon Ionization Cooling Experiment at the Rutherford Appleton Laboratory near Oxford, England.
+               </p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">March 2010 - June 2012</span>
+            </div>
+          </div>
+
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of Pennsylvania</h3>
+              <div class="subheading mb-3">PhD in High Energy Physics</div>
+              <div>Thesis - Search for Low Mass Resonances in Diphoton Final States</div>
+              <div>Advisor - I. Joseph Kroll </div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">July 2012 - July 2018</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of Pennsylvania</h3>
+              <div class="subheading mb-3">Master of Science in Physics</div>
+              <div>Advisor - I. Joseph Kroll</div>
+              <p>GPA: 3.88</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">July 2012 - May 2014</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">University of California, Riverside</h3>
+              <div class="subheading mb-3">Bachelor of Science - Cum Laude</div>
+              <div>Physics and Applied Mathemetics</div>
+              <div>Advisor - Gail Hanson</div>
+              <p>GPA: 3.73</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">August 2009 - May 2012</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+          <h2 class="mb-5">Skills</h2>
+
+          <p>I worked on large software frameworks for analyzing data.</p>
+
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline list-icons">
+            <li class="list-inline-item">
+              <i class="devicons devicon-cplusplus-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-python-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-docker-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-github-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="devicons devicon-go-plain"></i>
+            </li>
+          </ul>
+
+          <div class="subheading mb-3">Hardware</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-microchip"></i>
+              Arduino &amp; ATMEL chips</li>
+            <li>
+              <i class="fa-li fa fa-microchip"></i>
+              RaspberryPi</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+          <h2 class="mb-5">Interests</h2>
+          <p>Coming Soon!</p>
+          <p class="mb-0"></p>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <div class="my-auto">
+          <h2 class="mb-5">Awards &amp; Grants</h2>
+          <ul class="fa-ul mb-0">
+            <li>
+              <h3 class="mb-0"> <i class="fa-li fa fa-trophy text-warning"></i>PennApps XIV - September 2016</h3>
+              <div class="subheading">3<sup>rd</sup> Place Overall and TASER/Axon Prize for Best Public Safety and Video Processing App</div>
+              <p>EyeHUD - user and object relative tracking transparent heads up display - <a href="http://devpost.com/software/eyehud">View Project on Devpost</a></p> </li>
+            <li>
+              <h3 class="mb-1"> <i class="fa-li fa fa-trophy text-warning"></i>PennApps XIII - January 2016</h3>
+              <div class="subheading">1<sup>st</sup> Place</div>
+              <p>Implementation of an RF communication scheme using a motherboard RAM bus.</p> </li>
+            <li>
+              <h3 class="mb-1"> <i class="fa-li fa fa-trophy text-warning"></i>Chairmans Teaching Award - September 2015</h3>
+              <div class="subheading">University of Pennsylvania</div>
+              <p></p> </li>
+            <li>
+              <h3 class="mb-0"> <i class="fa-li fa fa-trophy text-warning"></i>Science Circle Award of Exelence - June 2012</h3>
+              <div class="subheading">University of California, Riverside</div>
+              <p></p> </li>
+            <li>
+              <h3 class="mb-0"> <i class="fa-li fa fa-trophy text-warning"></i>Academic Excelence Award in Physics - May 2012</h3>
+              <div class="subheading">University of California, Riverside</div>
+              <p></p> </li>
+            <li>
+              <h3 class="mb-0"> <i class="fa-li fa fa-trophy text-warning"></i>Deans Fellowship - May 2010</h3>
+              <div class="subheading">University of California, Riverside</div>
+              <p></p> </li>
+            <li>
+              <h3 class="mb-0"> <i class="fa-li fa fa-trophy text-warning"></i>Summer Bridge to Research Grant - May 2009</h3>
+              <div class="subheading">University of California, Riverside</div>
+              <p></p> </li>
+          </ul>
+        </div>
+      </section>
+
+
+
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
+        <div class="my-auto">
+          <h2 class="mb-5">Selected Publications &amp; Presentations</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Search for Resonances in Diphoton Events at √s=13 TeV with the ATLAS Detector</h3>
+              <div class="subheading mb-3">The ATLAS Collaboration</div>
+              <div>J. High Energ. Phys. (2016) 2016: 1. doi:10.1007/JHEP09(2016)001, <a href="https://arxiv.org/abs/1606.03833v1" target="_blank">arXiv:1606.03833v1 [hep-ex]</a> </div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2017</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Electron effciency Measurements with the ATLAS Detector using the 2015 LHC proton-proton collision data</h3>
+              <div class="subheading mb-3">The ATLAS Collaboration</div>
+              <div>51st Rencontres de Moriond on QCD and High Energy Interactions, La Thuile, Italy, <a href="https://cds.cern.ch/record/2157687" target="_blank">CDS Record</a></div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">June 2016</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blog">
+          <div class="my-auto">
+              <h2 class="mb-5">Blog</h2>
+              <p>Come see my blog where I document some of my adventures with science, technology, and whatever else comes to mind.</p>
+              <h3> <a href="https://scienceandtinkering.blogspot.com/" target="_blank"> Tech Adventures Blog </a> </h3>
+          </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/js/resume.js"></script>
+
+  </body>
+
+</html>
