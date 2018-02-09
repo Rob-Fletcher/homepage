@@ -5,4 +5,5 @@ include
 lib
 .DS_Store
 *.pyc
-
+.sass-cache
+*.map
